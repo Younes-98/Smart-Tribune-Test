@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "react-app",
+    "plugin:jsx-a11y/strict"
+  ],
+  "plugins": [
+    "no-only-tests"
+  ],
+  "rules": {
+    "no-console": "warn",
+    "no-alert": "error",
+    "import/no-anonymous-default-export": "off",
+    "no-only-tests/no-only-tests": "error"
+  }
+}

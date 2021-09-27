@@ -1,0 +1,52 @@
+{
+    "name": "hiring-test",
+    "version": "1.2.0",
+    "private": true,
+    "dependencies": {
+        "@emotion/react": "^11.10.6",
+        "@emotion/styled": "^11.10.6",
+        "@mui/icons-material": "^5.11.11",
+        "@mui/material": "^5.11.11",
+        "@mui/styles": "^5.11.11",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-redux": "^8.0.5",
+        "react-scripts": "5.0.1",
+        "redux": "^4.2.1",
+        "redux-logger": "^3.0.6",
+        "styled-components": "^5.3.8"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test --env=jsdom --colors --coverage=false --roots=src/",
+        "lint": "eslint src stories public --max-warnings=0",
+        "eject": "react-scripts eject",
+        "prettier-check": "prettier --list-different \"**/*.{js,json,css}\"",
+        "prettier-fix": "prettier --write \"**/*.{js,json,css}\"",
+        "flow": "flow check --color=always",
+        "flow-annotation-check": "flow-annotation-check --list-files noflow --show-summary -x src/setupTests.js -x 'src/Testing/**' -x 'build/**' -x 'node_modules/**'"
+    },
+    "devDependencies": {
+        "@cfaester/enzyme-adapter-react-18": "^0.6.0",
+        "@testing-library/jest-dom": "^5.16.5",
+        "@testing-library/react": "^14.0.0",
+        "enzyme": "^3.11.0",
+        "enzyme-to-json": "^3.6.2",
+        "eslint-plugin-no-only-tests": "^3.1.0",
+        "flow-bin": "^0.197.0",
+        "prettier": "^2.8.4",
+        "react-error-overlay": "6.0.11",
+        "redux-mock-store": "^1.5.4"
+    },
+    "resolutions": {
+        "react-error-overlay": "6.0.11"
+    },
+    "jest": {
+        "snapshotSerializers": ["enzyme-to-json/serializer"]
+    },
+    "browserslist": {
+        "production": [">0.2%", "not dead", "not op_mini all"],
+        "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
+    }
+}

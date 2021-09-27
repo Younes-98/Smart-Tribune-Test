@@ -1,0 +1,3 @@
+describe('MathView', () => {
+    // TO COMPLETE
+});

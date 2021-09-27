@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+    server:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: smarttribune/react-testing:1.2
+        ports:
+            - 3000:3000
+        volumes:
+            - ${PWD}:/home/node/app
+        user: node
+        working_dir: /home/node/app
+        tty: true
+

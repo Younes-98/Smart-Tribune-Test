@@ -1,6 +1,6 @@
 // @flow
 
-import { Button, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 import * as React from 'react';
 import MathView from './MathView';
 
@@ -34,23 +34,30 @@ const Component: React.ComponentType<Props> = () => {
     }, [input1, input2]);
 
     return (
-        <Grid>
-            <Grid container spacing={1} alignItems="center">
-                <Grid item>Comparison between</Grid>
-                <Grid item>
-                    <input type="number" onChange={onChangeInput1} />
-                </Grid>
-                <Grid item>and</Grid>
-                <Grid item>
-                    <input type="number" onChange={onChangeInput2} />
-                </Grid>
-                <Grid item>
-                    <Button onClick={onCompare} variant="outlined" size="small">
-                        Click to compare
-                    </Button>
+        <Grid container direction={'column'} spacing={5}>
+            <Grid item>
+                <Grid container spacing={1} alignItems="center">
+                    <Grid item>Comparison between</Grid>
+                    <Grid item>
+                        <input type="number" onChange={onChangeInput1} className={'nes-input'} />
+                    </Grid>
+                    <Grid item>and</Grid>
+                    <Grid item>
+                        <input type="number" onChange={onChangeInput2} className={'nes-input'} />
+                    </Grid>
+                    <Grid item>
+                        <button onClick={onCompare} className={'nes-btn is-success'}>
+                            Click to compare
+                        </button>
+                    </Grid>
                 </Grid>
             </Grid>
-            <p>{result}</p>
+            <Grid item>
+                <div className="nes-container with-title is-centered">
+                    <p className="title">Result</p>
+                    <p>{result}</p>
+                </div>
+            </Grid>
         </Grid>
     );
 };

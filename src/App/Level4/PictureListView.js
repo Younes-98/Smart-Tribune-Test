@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 // @flow
 
 class PictureListView {
@@ -9,7 +10,7 @@ class PictureListView {
         Object.freeze(this);
     }
 
-    get length() {
+    getLength() {
         return this.list.length;
     }
 
@@ -25,3 +26,5 @@ class PictureListView {
         return new PictureListView(this.list.map((p) => (p.id === picture.id ? picture : p)));
     }
 }
+
+export default PictureListView;

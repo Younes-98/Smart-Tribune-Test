@@ -41,8 +41,8 @@ make shell
 
 For this first level, you'll have to use Jest to test 1 react component, and 1 JS class.
 
-The component is located in <code>src/App/Level1/index.js</code> and the class in <code>src/App/Level1/MathView.js</code>
-So please complete the test files <code>src/App/Level1/index.spec.js</code> and <code>src/App/Level1/MathView.spec.js</code>
+The component is located in <code>src/App/Level1/Component.js</code> and the class in <code>src/App/Level1/MathView.js</code>
+So please complete the test files <code>src/App/Level1/Component.spec.js</code> and <code>src/App/Level1/MathView.spec.js</code>
 You can run the tests by running <code>yarn test</code> in your container
 (accessible by running <code>make shell</code> in your terminal).
 

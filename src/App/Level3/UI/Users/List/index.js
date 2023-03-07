@@ -16,28 +16,30 @@ const UsersList: React.ComponentType<Props> = () => {
     }, [dispatch]);
 
     return (
-        <table>
-            <tbody>
-                {users &&
-                    users.list.map((user) => (
-                        <tr key={user.id}>
-                            <td>{user.id}</td>
-                            <td>{user.firstname}</td>
-                            <td>{user.lastname}</td>
-                            <td>{user.email}</td>
-                            <td>
-                                <img alt={user.lastname} src={user.picture} />
-                            </td>
-                        </tr>
-                    ))}
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td>Prev page</td>
-                    <td>Next page</td>
-                </tr>
-            </tfoot>
-        </table>
+        <div className="nes-table-responsive">
+            <table className="nes-table is-borderd is-centered">
+                <tbody>
+                    {users &&
+                        users.list.map((user) => (
+                            <tr key={user.id}>
+                                <td>{user.id}</td>
+                                <td>{user.firstname}</td>
+                                <td>{user.lastname}</td>
+                                <td>{user.email}</td>
+                                <td>
+                                    <img alt={user.lastname} src={user.picture} />
+                                </td>
+                            </tr>
+                        ))}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Prev page</td>
+                        <td colSpan={4}>Next page</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
     );
 };
 

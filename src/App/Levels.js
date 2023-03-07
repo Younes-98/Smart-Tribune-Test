@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import { Button, Card, CardHeader, CardContent, CardActions } from '@mui/material';
+import { Card, CardHeader, CardContent, CardActions } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import Level0 from './Level0';
 import Level1 from './Level1';
@@ -98,7 +98,7 @@ const App: React.ComponentType<Props> = ({ store }) => {
         <Card className={classes.card}>
             <CardHeader
                 className={classes.cardHeader}
-                title={`Level ${selectedLevelIndex}`}
+                title={<span className="nes-text">Level {selectedLevelIndex}</span>}
                 subheader={currentLevel}
             />
             <CardContent className={classes.cardContent}>
@@ -111,16 +111,19 @@ const App: React.ComponentType<Props> = ({ store }) => {
             </CardContent>
             <CardActions className={classes.cardActions}>
                 {previousLevel !== undefined ? (
-                    <Button onClick={onGotoLevel(selectedLevelIndex - 1)}>
+                    <button onClick={onGotoLevel(selectedLevelIndex - 1)} className="nes-btn">
                         {`< Level ${selectedLevelIndex - 1}: ${previousLevel}`}
-                    </Button>
+                    </button>
                 ) : (
                     <div />
                 )}
                 {nextLevel !== undefined ? (
-                    <Button onClick={onGotoLevel(selectedLevelIndex + 1)} variant="contained">
+                    <button
+                        onClick={onGotoLevel(selectedLevelIndex + 1)}
+                        className="nes-btn is-primary"
+                    >
                         {`> Level ${selectedLevelIndex + 1}: ${nextLevel}`}
-                    </Button>
+                    </button>
                 ) : (
                     <div />
                 )}

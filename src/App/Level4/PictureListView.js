@@ -1,28 +1,33 @@
 /* eslint-disable no-use-before-define */
 // @flow
 
-class PictureListView {
-    list;
+type PicType = {
+    id: string,
+    url: string,
+};
 
-    constructor(list) {
+class PictureListView {
+    list: Array<PicType>;
+
+    constructor(list: Array<PicType>) {
         this.list = list;
 
         Object.freeze(this);
     }
 
-    getLength() {
+    getLength(): number {
         return this.list.length;
     }
 
-    addPicture(picture) {
+    addPicture(picture: PicType): PictureListView {
         return new PictureListView([...this.list, picture]);
     }
 
-    removePicture(picture) {
+    removePicture(picture: PicType): PictureListView {
         return new PictureListView(this.list.filter((p) => p.id !== picture.id));
     }
 
-    replacePicture(picture) {
+    replacePicture(picture: PicType): PictureListView {
         return new PictureListView(this.list.map((p) => (p.id === picture.id ? picture : p)));
     }
 }

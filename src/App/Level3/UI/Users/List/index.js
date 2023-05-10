@@ -10,10 +10,20 @@ type Props = {||};
 const UsersList: React.ComponentType<Props> = () => {
     const dispatch = useDispatch();
     const users = useSelector((state) => state.usersListReducers.users);
+    const [page, setPage] = React.useState(1);
+    const [itemsPerPage, setItemsPerPage] = React.useState(5);
+
+    const handlePrevPage = () => {
+        setPage(page - 1);
+    };
+
+    const handleNextPage = () => {
+        setPage(page + 1);
+    };
 
     React.useEffect(() => {
-        dispatch(fetchUsers(new FetchUsers(1, 5)));
-    }, [dispatch]);
+        dispatch(fetchUsers(new FetchUsers(page, itemsPerPage)));
+    }, [dispatch, page, itemsPerPage]);
 
     return (
         <div className="nes-table-responsive">
@@ -34,8 +44,19 @@ const UsersList: React.ComponentType<Props> = () => {
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td>Prev page</td>
-                        <td colSpan={4}>Next page</td>
+                        <td>
+                            <button disabled={page === 1} onClick={handlePrevPage}>
+                                Prev page
+                            </button>
+                        </td>
+                        <td colSpan={4}>
+                            <button
+                                onClick={handleNextPage}
+                                disabled={!users || users.list.length < itemsPerPage}
+                            >
+                                Next page
+                            </button>
+                        </td>
                     </tr>
                 </tfoot>
             </table>

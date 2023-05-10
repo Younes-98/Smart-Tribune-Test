@@ -37,13 +37,27 @@ const Component: React.ComponentType<Props> = () => {
         <Grid container direction={'column'} spacing={5}>
             <Grid item>
                 <Grid container spacing={1} alignItems="center">
-                    <Grid item>Comparison between</Grid>
                     <Grid item>
-                        <input type="number" onChange={onChangeInput1} className={'nes-input'} />
+                        <label htmlFor="Input 1">Comparison between</label>
                     </Grid>
-                    <Grid item>and</Grid>
                     <Grid item>
-                        <input type="number" onChange={onChangeInput2} className={'nes-input'} />
+                        <input
+                            id="Input 1"
+                            type="number"
+                            onChange={onChangeInput1}
+                            className={'nes-input'}
+                        />
+                    </Grid>
+                    <Grid item>
+                        <label htmlFor="Input 2">and</label>
+                    </Grid>
+                    <Grid item>
+                        <input
+                            id="Input 2"
+                            type="number"
+                            onChange={onChangeInput2}
+                            className={'nes-input'}
+                        />
                     </Grid>
                     <Grid item>
                         <button onClick={onCompare} className={'nes-btn is-success'}>

@@ -9,8 +9,7 @@ services:
         ports:
             - 3000:3000
         volumes:
-            - ${PWD}:/home/node/app
+            - C:/Users/dell/Desktop/SmrTrib/hiring-test-frontend-Younes-98:/home/node/app
         user: node
         working_dir: /home/node/app
         tty: true
-
